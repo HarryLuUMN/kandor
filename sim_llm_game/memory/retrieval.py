@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from sim_llm_game.core.models import Event, Relation
 
 
-@dataclass(slots=True)
+@dataclass
 class RelevantContext:
     entity_ids: list[str]
     time: int
@@ -14,7 +14,7 @@ class RelevantContext:
     events: list[Event]
 
 
-@dataclass(slots=True)
+@dataclass
 class EntityHistory:
     entity_id: str
     relations: list[Relation]

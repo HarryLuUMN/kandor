@@ -2,20 +2,20 @@ from __future__ import annotations
 
 from collections import defaultdict
 from collections.abc import Callable
-from typing import Any
+from typing import Any, Optional, Union
 
 from pydantic import BaseModel
 
 from sim_llm_game.llm.base import BaseLLM
 
 
-MockHandler = Callable[[dict[str, Any]], dict[str, Any] | BaseModel]
+MockHandler = Callable[[dict[str, Any]], Union[dict[str, Any], BaseModel]]
 
 
 class MockLLM(BaseLLM):
     def __init__(
         self,
-        responses: dict[str, dict[str, Any] | BaseModel | MockHandler] | None = None,
+        responses: Optional[dict[str, Union[dict[str, Any], BaseModel, MockHandler]]] = None,
     ) -> None:
         self._responses = responses or {}
         self.calls: dict[str, list[dict[str, Any]]] = defaultdict(list)

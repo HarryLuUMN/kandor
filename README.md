@@ -26,6 +26,19 @@ python3 examples/demo.py
 
 A lightweight static documentation site lives under `docs/` and is deployed through GitHub Pages.
 
+## Real LLM smoke test
+
+If you have an OpenAI-compatible API key configured locally, you can run:
+
+```bash
+PYTHONPATH=. python3 examples/smoke_openai.py
+```
+
+Expected environment variables:
+- `OPENAI_API_KEY`
+- optional: `OPENAI_MODEL`
+- optional: `OPENAI_BASE_URL`
+
 ## Minimal Usage
 
 ```python

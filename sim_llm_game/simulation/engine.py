@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Callable, Sequence
+from typing import Optional
 
 from sim_llm_game.core.models import Event, WorldSpec, WorldState
 from sim_llm_game.memory.retrieval import RelevantContext
@@ -9,7 +10,7 @@ from sim_llm_game.simulation.rules import validate_event
 from sim_llm_game.simulation.updater import WorldUpdater
 
 
-EventSelector = Callable[[RelevantContext, Sequence[Event]], Event | None]
+EventSelector = Callable[[RelevantContext, Sequence[Event]], Optional[Event]]
 
 
 class SimulationRunner:
@@ -50,7 +51,7 @@ class SimulationRunner:
     @staticmethod
     def _default_selector(
         _context: RelevantContext, candidate_events: Sequence[Event]
-    ) -> Event | None:
+    ) -> Optional[Event]:
         if not candidate_events:
             return None
         return sorted(candidate_events, key=lambda event: (event.timestamp, event.id))[0]
