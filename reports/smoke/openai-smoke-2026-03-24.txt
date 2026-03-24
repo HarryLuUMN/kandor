@@ -1,0 +1,8 @@
+SMOKE_TEST_OK
+premise: A compact fantasy world where two ancient factions vie for control over two mystical locations, simmering with rising tension due to a long-standing dispute.
+genre: Fantasy
+entities: 4
+relations: 3
+events: 2
+time: 1
+summary: At time 1, no active relations exist among entities; however, a tentative alliance was formed during the smoke test event, marking a tentative step toward cooperation despite the otherwise isolated state.
