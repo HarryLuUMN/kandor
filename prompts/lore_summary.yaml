@@ -1,0 +1,11 @@
+name: lore_summary
+purpose: Turn structured memory into concise world lore.
+inputs:
+  - world_state
+  - entity_history
+  - relevant_events
+outputs:
+  - summary
+guardrails:
+  - Preserve causal and temporal consistency.
+  - Do not invent unsupported facts.

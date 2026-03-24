@@ -73,3 +73,12 @@ class WorldState(BaseModel):
     current_time: int = 0
     entity_ids: list[str] = Field(default_factory=list)
     derived_state: dict[str, Any] = Field(default_factory=dict)
+
+
+class WorldBlueprint(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    spec: WorldSpec
+    entities: list[Entity] = Field(default_factory=list)
+    relations: list[Relation] = Field(default_factory=list)
+    seed_events: list[Event] = Field(default_factory=list)

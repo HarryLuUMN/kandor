@@ -1,0 +1,43 @@
+from __future__ import annotations
+
+from collections import defaultdict
+from collections.abc import Callable
+from typing import Any
+
+from pydantic import BaseModel
+
+from sim_llm_game.llm.base import BaseLLM
+
+
+MockHandler = Callable[[dict[str, Any]], dict[str, Any] | BaseModel]
+
+
+class MockLLM(BaseLLM):
+    def __init__(
+        self,
+        responses: dict[str, dict[str, Any] | BaseModel | MockHandler] | None = None,
+    ) -> None:
+        self._responses = responses or {}
+        self.calls: dict[str, list[dict[str, Any]]] = defaultdict(list)
+
+    def generate_structured(
+        self,
+        *,
+        prompt_name: str,
+        variables: dict[str, Any],
+        schema: type[BaseModel],
+    ) -> BaseModel:
+        self.calls[prompt_name].append(variables)
+        payload = self._responses.get(prompt_name)
+        if payload is None:
+            return schema.model_validate({})
+
+        if callable(payload):
+            payload = payload(variables)
+
+        if isinstance(payload, BaseModel):
+            if isinstance(payload, schema):
+                return payload
+            return schema.model_validate(payload.model_dump())
+
+        return schema.model_validate(payload)
