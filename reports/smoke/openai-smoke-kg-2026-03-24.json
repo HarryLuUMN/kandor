@@ -1,0 +1,135 @@
+{
+  "world_spec": {
+    "premise": "In the mystical realm of Eldoria, two powerful factions vie for control over ancient lands rich in magical energy. The noble Order of the Silver Dawn and the enigmatic Shadow Veil occupy the twin regions of Luminara Forest and Duskmire Swamp, their uneasy tension threatening to erupt into open conflict.",
+    "genre": "Fantasy",
+    "rules": [
+      "Magic is derived from the natural energies of locations and can be harnessed by those attuned to the land.",
+      "Factions can form temporary alliances or engage in conflicts to gain control over resources and territories.",
+      "Characters' loyalties can shift based on political maneuvers and magical influences.",
+      "Events influence faction relations, territorial control, and the emergence of heroes or villains."
+    ],
+    "ontology": {
+      "factions": [
+        "Order of the Silver Dawn",
+        "Shadow Veil"
+      ],
+      "locations": [
+        "Luminara Forest",
+        "Duskmire Swamp"
+      ],
+      "characters": [],
+      "events": [
+        "Tension Between Factions"
+      ],
+      "artifacts": []
+    },
+    "simulation_parameters": {
+      "time_unit": "days",
+      "starting_year": 1000
+    }
+  },
+  "entities": [
+    {
+      "id": "faction_silver_dawn",
+      "type": "faction",
+      "name": "Order of the Silver Dawn",
+      "attributes": {
+        "ideology": "Light, honor, protection",
+        "leader": "High Paladin Elarion"
+      }
+    },
+    {
+      "id": "faction_shadow_veil",
+      "type": "faction",
+      "name": "Shadow Veil",
+      "attributes": {
+        "ideology": "Secrets, stealth, power",
+        "leader": "Mistress Nyx"
+      }
+    },
+    {
+      "id": "location_luminara_forest",
+      "type": "location",
+      "name": "Luminara Forest",
+      "attributes": {
+        "description": "A radiant forest glowing with magical energy, home to ancient spirits and the Silver Dawn."
+      }
+    },
+    {
+      "id": "location_duskmire_swamp",
+      "type": "location",
+      "name": "Duskmire Swamp",
+      "attributes": {
+        "description": "A dark, misty swamp shrouded in mystery and shadows, controlled by the Shadow Veil."
+      }
+    }
+  ],
+  "relations": [
+    {
+      "subject": "faction_silver_dawn",
+      "predicate": "controls",
+      "object": "location_luminara_forest",
+      "start_time": 1000,
+      "end_time": null,
+      "metadata": {}
+    },
+    {
+      "subject": "faction_shadow_veil",
+      "predicate": "controls",
+      "object": "location_duskmire_swamp",
+      "start_time": 1000,
+      "end_time": null,
+      "metadata": {}
+    },
+    {
+      "subject": "faction_silver_dawn",
+      "predicate": "tension_with",
+      "object": "faction_shadow_veil",
+      "start_time": 1000,
+      "end_time": null,
+      "metadata": {
+        "level": "high",
+        "reason": "Competing claims over magical resources"
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "event.smoke.step1",
+      "type": "alliance_formed",
+      "timestamp": 1,
+      "participants": [
+        "faction_silver_dawn",
+        "faction_shadow_veil"
+      ],
+      "effects": [],
+      "summary": "A tentative alliance forms during the smoke test.",
+      "metadata": {}
+    },
+    {
+      "id": "event_tension_001",
+      "type": "political_tension",
+      "timestamp": 1000,
+      "participants": [
+        "faction_silver_dawn",
+        "faction_shadow_veil"
+      ],
+      "effects": [
+        {
+          "effect_type": "increase_tension",
+          "target": [
+            "faction_silver_dawn",
+            "faction_shadow_veil"
+          ],
+          "magnitude": 7
+        }
+      ],
+      "summary": "Rising tensions as the Order of the Silver Dawn and Shadow Veil solidify control over their respective regions, leading to increased hostilities and mistrust.",
+      "metadata": {
+        "location": "border between Luminara Forest and Duskmire Swamp",
+        "implications": "Potential for conflict escalation"
+      }
+    }
+  ],
+  "current_time": 1
+}
