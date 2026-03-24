@@ -22,6 +22,10 @@ python3 -m pip install -e '.[dev]'
 python3 examples/demo.py
 ```
 
+## Docs
+
+A lightweight static documentation site lives under `docs/` and is deployed through GitHub Pages.
+
 ## Minimal Usage
 
 ```python

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting started · sim-llm-game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell narrow">
+      <header class="hero card">
+        <p class="eyebrow">Getting started</p>
+        <h1>Run the library locally</h1>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="api.html">API guide</a>
+        </nav>
+      </header>
+      <section class="card panel prose">
+        <h2>Install</h2>
+        <pre><code>python3 -m pip install -e '.[dev]'</code></pre>
+
+        <h2>Run the demo</h2>
+        <pre><code>python3 examples/demo.py</code></pre>
+
+        <h2>Minimal usage</h2>
+        <pre><code>from sim_llm_game import SimulationRunner, WorldBuilder
+from sim_llm_game.llm.mock import MockLLM
+
+llm = MockLLM(responses={
+    "god_agent": {
+        "premise": "A broken empire of sandglass cities.",
+        "genre": "fantasy",
+    }
+})
+
+builder = WorldBuilder(llm=llm)
+blueprint = builder.create_world(
+    prompt="Make a desert empire with unstable time magic."
+)
+memory = builder.create_memory(blueprint)
+runner = SimulationRunner(world=blueprint.spec, memory=memory)</code></pre>
+
+        <h2>Tests</h2>
+        <pre><code>python3 -m pytest -q</code></pre>
+      </section>
+    </main>
+  </body>
+</html>

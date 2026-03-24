@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sim-llm-game docs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero card">
+        <p class="eyebrow">sim-llm-game</p>
+        <h1>LLM worldbuilding with temporal KG memory</h1>
+        <p class="lede">
+          Documentation for a Python library that combines a world-building agent,
+          temporal knowledge graph memory, a simulation engine, and lore generation.
+        </p>
+        <nav class="nav-links">
+          <a href="getting-started.html">Getting started</a>
+          <a href="architecture.html">Architecture</a>
+          <a href="api.html">API guide</a>
+        </nav>
+      </header>
+
+      <section class="grid">
+        <article class="card panel">
+          <h2>What it does</h2>
+          <ul>
+            <li>Compiles user prompts into a structured world blueprint</li>
+            <li>Stores world state, relations, and events in temporal KG memory</li>
+            <li>Advances the world with a deterministic simulation loop</li>
+            <li>Generates readable lore summaries from structured memory</li>
+          </ul>
+        </article>
+        <article class="card panel">
+          <h2>Core modules</h2>
+          <ul>
+            <li><strong>agents</strong> — world setup agents such as <code>GodAgent</code></li>
+            <li><strong>memory</strong> — temporal KG storage and retrieval</li>
+            <li><strong>simulation</strong> — step-based event application</li>
+            <li><strong>generation</strong> — lore and narrative summaries</li>
+          </ul>
+        </article>
+        <article class="card panel wide">
+          <h2>Recommended path</h2>
+          <ol>
+            <li>Read <a href="getting-started.html">Getting started</a> for install and the demo pipeline.</li>
+            <li>Read <a href="architecture.html">Architecture</a> to understand the data flow.</li>
+            <li>Use <a href="api.html">API guide</a> when integrating the library into your own project.</li>
+          </ol>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

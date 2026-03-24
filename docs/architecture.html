@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architecture · sim-llm-game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell narrow">
+      <header class="hero card">
+        <p class="eyebrow">Architecture</p>
+        <h1>How the pieces fit together</h1>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="getting-started.html">Getting started</a>
+          <a href="api.html">API guide</a>
+        </nav>
+      </header>
+      <section class="card panel prose">
+        <h2>Core flow</h2>
+        <ol>
+          <li><strong>GodAgent</strong> compiles a user prompt into a <code>WorldBlueprint</code>.</li>
+          <li><strong>WorldBuilder</strong> turns that blueprint into temporal KG memory.</li>
+          <li><strong>SimulationRunner</strong> advances the world by selecting and applying events.</li>
+          <li><strong>TemporalKGMemory</strong> stores events and relations over time.</li>
+          <li><strong>LoreGenerator</strong> turns structured state into readable summaries.</li>
+        </ol>
+
+        <h2>Design principle</h2>
+        <p>
+          The LLM proposes or summarizes; the library owns validation, state updates,
+          memory writes, and retrieval. That separation keeps the system inspectable and testable.
+        </p>
+
+        <h2>Package layout</h2>
+        <pre><code>sim_llm_game/
+  agents/
+  builders/
+  core/
+  generation/
+  llm/
+  memory/
+  simulation/</code></pre>
+      </section>
+    </main>
+  </body>
+</html>

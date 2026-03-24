@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API guide · sim-llm-game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell narrow">
+      <header class="hero card">
+        <p class="eyebrow">API guide</p>
+        <h1>Main classes and entry points</h1>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="getting-started.html">Getting started</a>
+          <a href="architecture.html">Architecture</a>
+        </nav>
+      </header>
+      <section class="card panel prose">
+        <h2>Top-level exports</h2>
+        <ul>
+          <li><code>WorldBuilder</code></li>
+          <li><code>SimulationRunner</code></li>
+          <li><code>TemporalKGMemory</code></li>
+          <li><code>LoreGenerator</code></li>
+          <li><code>WorldSpec</code>, <code>WorldBlueprint</code>, <code>WorldState</code>, <code>Event</code></li>
+        </ul>
+
+        <h2>World building</h2>
+        <p><code>WorldBuilder.create_world(prompt=...)</code> returns a structured blueprint.</p>
+
+        <h2>Memory</h2>
+        <ul>
+          <li><code>get_world_state_at(time)</code></li>
+          <li><code>get_entity_history(entity_id)</code></li>
+          <li><code>get_active_relations(entity_id, time=None)</code></li>
+          <li><code>get_events_between(start, end)</code></li>
+          <li><code>get_relevant_context(entity_ids, time, horizon)</code></li>
+        </ul>
+
+        <h2>Simulation</h2>
+        <p><code>SimulationRunner.step(candidate_events)</code> validates and applies one selected event.</p>
+      </section>
+    </main>
+  </body>
+</html>
