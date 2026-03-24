@@ -39,6 +39,24 @@ Expected environment variables:
 - optional: `OPENAI_MODEL`
 - optional: `OPENAI_BASE_URL`
 
+## Temporal KG widget
+
+A notebook widget can visualize a temporal KG snapshot with `anywidget` and `d3.js`.
+
+Install optional widget dependencies:
+
+```bash
+python3 -m pip install 'anywidget>=0.9,<1.0' 'traitlets>=5.14,<6.0'
+```
+
+Then in a notebook:
+
+```python
+from sim_llm_game import TemporalKGWidget
+widget = TemporalKGWidget('reports/smoke/openai-smoke-kg-2026-03-24.json')
+widget
+```
+
 ## Minimal Usage
 
 ```python
