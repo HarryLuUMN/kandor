@@ -1,6 +1,8 @@
-# sim-llm-game
+# Kandor
 
-`sim-llm-game` is a Python library for LLM-based world building backed by temporal knowledge graph memory.
+**Kandor** is a Python library for simulated fictional worlds with temporal knowledge graph memory.
+
+_A bottle-city engine for worldbuilding, simulation, and temporal memory._
 
 ## V1 Demo Features
 

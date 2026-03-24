@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sim-llm-game"
+name = "kandor"
 version = "0.1.0"
-description = "LLM-based world building with temporal knowledge graph memory."
+description = "A bottle-city engine for simulated fictional worlds with temporal knowledge graph memory."
 readme = "PLAN.md"
 requires-python = ">=3.9"
 dependencies = [
