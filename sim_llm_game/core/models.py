@@ -65,3 +65,11 @@ class Event(BaseModel):
     effects: list[dict[str, Any]] = Field(default_factory=list)
     summary: str = ""
     metadata: dict[str, Any] = Field(default_factory=dict)
+
+
+class WorldState(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    current_time: int = 0
+    entity_ids: list[str] = Field(default_factory=list)
+    derived_state: dict[str, Any] = Field(default_factory=dict)
