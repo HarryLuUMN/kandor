@@ -24,11 +24,19 @@
           <li><code>SimulationRunner</code></li>
           <li><code>TemporalKGMemory</code></li>
           <li><code>LoreGenerator</code></li>
+          <li><code>TemporalKGWidget</code> and <code>load_temporal_kg_snapshot</code></li>
           <li><code>WorldSpec</code>, <code>WorldBlueprint</code>, <code>WorldState</code>, <code>Event</code></li>
         </ul>
 
         <h2>World building</h2>
         <p><code>WorldBuilder.create_world(prompt=...)</code> returns a structured blueprint.</p>
+        <p><code>WorldBuilder.create_memory(blueprint)</code> seeds a <code>TemporalKGMemory</code> instance from the blueprint.</p>
+
+        <h2>LLM backends</h2>
+        <ul>
+          <li><code>MockLLM</code> for deterministic local tests and examples</li>
+          <li><code>OpenAICompatibleLLM</code> for structured generation against OpenAI-compatible chat APIs</li>
+        </ul>
 
         <h2>Memory</h2>
         <ul>
@@ -41,6 +49,15 @@
 
         <h2>Simulation</h2>
         <p><code>SimulationRunner.step(candidate_events)</code> validates and applies one selected event.</p>
+
+        <h2>Generation</h2>
+        <ul>
+          <li><code>LoreGenerator.summarize_world(memory=..., time=...)</code></li>
+          <li><code>LoreGenerator.summarize_entity(memory=..., entity_id=..., time=...)</code></li>
+        </ul>
+
+        <h2>Widgets</h2>
+        <p><code>TemporalKGWidget(path_or_data)</code> renders a saved KG snapshot in notebooks when the widget extras are installed.</p>
       </section>
     </main>
   </body>

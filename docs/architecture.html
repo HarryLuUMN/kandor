@@ -25,12 +25,20 @@
           <li><strong>SimulationRunner</strong> advances the world by selecting and applying events.</li>
           <li><strong>TemporalKGMemory</strong> stores events and relations over time.</li>
           <li><strong>LoreGenerator</strong> turns structured state into readable summaries.</li>
+          <li><strong>TemporalKGWidget</strong> can inspect exported snapshots visually inside notebooks.</li>
         </ol>
 
         <h2>Design principle</h2>
         <p>
           The LLM proposes or summarizes; the library owns validation, state updates,
           memory writes, and retrieval. That separation keeps the system inspectable and testable.
+        </p>
+
+        <h2>Provider boundary</h2>
+        <p>
+          The <code>llm</code> layer keeps model access swappable. Use <code>MockLLM</code> for local,
+          deterministic tests and <code>OpenAICompatibleLLM</code> when you want the same structured
+          interface backed by a real chat-completions endpoint.
         </p>
 
         <h2>Package layout</h2>
@@ -41,7 +49,8 @@
   generation/
   llm/
   memory/
-  simulation/</code></pre>
+  simulation/
+  widgets/</code></pre>
       </section>
     </main>
   </body>

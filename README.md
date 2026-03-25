@@ -11,11 +11,19 @@ _A bottle-city engine for worldbuilding, simulation, and temporal memory._
 - `SimulationRunner` advances the world through event application
 - `LoreGenerator` turns structured memory into readable summaries
 - `MockLLM` makes the full pipeline testable without external model calls
+- `OpenAICompatibleLLM` lets the same pipeline run against an OpenAI-compatible chat API
+- `TemporalKGWidget` renders saved KG snapshots inside notebooks
 
 ## Install
 
 ```bash
 python3 -m pip install -e '.[dev]'
+```
+
+Optional extras:
+
+```bash
+python3 -m pip install -e '.[dev,widgets]'
 ```
 
 ## Run The Demo
@@ -27,6 +35,11 @@ python3 examples/demo.py
 ## Docs
 
 A lightweight static documentation site lives under `docs/` and is deployed through GitHub Pages.
+
+- `docs/index.html`
+- `docs/getting-started.html`
+- `docs/architecture.html`
+- `docs/api.html`
 
 ## Real LLM smoke test
 
@@ -41,6 +54,19 @@ Expected environment variables:
 - optional: `OPENAI_MODEL`
 - optional: `OPENAI_BASE_URL`
 
+Example provider usage:
+
+```python
+from sim_llm_game.builders.world_builder import WorldBuilder
+from sim_llm_game.llm.openai import OpenAICompatibleLLM
+
+llm = OpenAICompatibleLLM()
+builder = WorldBuilder(llm=llm)
+blueprint = builder.create_world(
+    prompt="Create a world of fractured moon colonies linked by ritual trade."
+)
+```
+
 ## Temporal KG widget
 
 A notebook widget can visualize a temporal KG snapshot with `anywidget` and `d3.js`.
@@ -48,7 +74,7 @@ A notebook widget can visualize a temporal KG snapshot with `anywidget` and `d3.
 Install optional widget dependencies:
 
 ```bash
-python3 -m pip install 'anywidget>=0.9,<1.0' 'traitlets>=5.14,<6.0'
+python3 -m pip install -e '.[widgets]'
 ```
 
 Then in a notebook:
@@ -59,10 +85,18 @@ widget = TemporalKGWidget('reports/smoke/openai-smoke-kg-2026-03-24.json')
 widget
 ```
 
+You can also load the snapshot data directly:
+
+```python
+from sim_llm_game import load_temporal_kg_snapshot
+
+data = load_temporal_kg_snapshot("reports/smoke/openai-smoke-kg-2026-03-24.json")
+```
+
 ## Minimal Usage
 
 ```python
-from sim_llm_game import SimulationRunner, WorldBuilder
+from sim_llm_game import LoreGenerator, SimulationRunner, WorldBuilder
 from sim_llm_game.llm.mock import MockLLM
 
 llm = MockLLM(
@@ -76,5 +110,7 @@ llm = MockLLM(
 
 builder = WorldBuilder(llm=llm)
 blueprint = builder.create_world(prompt="Make a desert empire with unstable time magic.")
-runner = SimulationRunner(world=blueprint.spec, memory=builder.create_memory(blueprint))
+memory = builder.create_memory(blueprint)
+runner = SimulationRunner(world=blueprint.spec, memory=memory)
+lore = LoreGenerator(llm=llm)
 ```

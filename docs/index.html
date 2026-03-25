@@ -13,7 +13,8 @@
         <h1>LLM worldbuilding with temporal KG memory</h1>
         <p class="lede">
           Documentation for a Python library that combines a world-building agent,
-          temporal knowledge graph memory, a simulation engine, and lore generation.
+          temporal knowledge graph memory, a simulation engine, lore generation,
+          an OpenAI-compatible provider, and a notebook widget.
         </p>
         <nav class="nav-links">
           <a href="getting-started.html">Getting started</a>
@@ -30,15 +31,19 @@
             <li>Stores world state, relations, and events in temporal KG memory</li>
             <li>Advances the world with a deterministic simulation loop</li>
             <li>Generates readable lore summaries from structured memory</li>
+            <li>Supports both mocked and OpenAI-compatible LLM backends</li>
+            <li>Visualizes saved KG snapshots inside notebooks</li>
           </ul>
         </article>
         <article class="card panel">
           <h2>Core modules</h2>
           <ul>
             <li><strong>agents</strong> — world setup agents such as <code>GodAgent</code></li>
+            <li><strong>llm</strong> — provider interfaces including <code>MockLLM</code> and <code>OpenAICompatibleLLM</code></li>
             <li><strong>memory</strong> — temporal KG storage and retrieval</li>
             <li><strong>simulation</strong> — step-based event application</li>
             <li><strong>generation</strong> — lore and narrative summaries</li>
+            <li><strong>widgets</strong> — notebook visualization for temporal KG snapshots</li>
           </ul>
         </article>
         <article class="card panel wide">
@@ -52,5 +57,4 @@
       </section>
     </main>
   </body>
-</html>
 </html>
