@@ -32,6 +32,21 @@ python3 -m pip install -e '.[dev,widgets]'
 python3 examples/demo.py
 ```
 
+## Notebook Examples
+
+Introduction:
+Kandor now includes starter Jupyter notebooks for the most common library workflows.
+
+Usage:
+- `examples/notebooks/01_quickstart_world_pipeline.ipynb` walks through world creation, simulation, and lore generation
+- `examples/notebooks/02_temporal_kg_queries.ipynb` focuses on temporal memory queries and retrieval
+- `examples/notebooks/03_temporal_kg_widget.ipynb` shows the notebook widget for saved KG snapshots
+
+Current status:
+- these notebooks are starter examples for local exploration
+- they are designed to run with the current mock pipeline and bundled snapshot data
+- the widget notebook requires the optional `widgets` extras
+
 ## Docs
 
 A lightweight static documentation site lives under `docs/` and is deployed through GitHub Pages.
