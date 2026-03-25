@@ -11,3 +11,4 @@
    - write a concise commit message.
 
 3. You must write LLM prompts under `prompts` folder, and in a `.yaml` file.
+4. When you finish a new feature, you must include the introduction, usage, and current status of this feature in the documentation. 
