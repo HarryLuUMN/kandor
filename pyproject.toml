@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "kandor"
 version = "0.1.0"
 description = "A bottle-city engine for simulated fictional worlds with temporal knowledge graph memory."
-readme = "PLAN.md"
+readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
   "pydantic>=2.7,<3.0",
@@ -21,11 +21,6 @@ dev = [
 widgets = [
   "anywidget>=0.9,<1.0",
   "traitlets>=5.14,<6.0",
-]
-
-[project.optional-dependencies]
-dev = [
-  "pytest>=8.0,<9.0",
 ]
 
 [tool.setuptools.packages.find]
