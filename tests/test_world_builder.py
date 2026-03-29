@@ -1,4 +1,5 @@
 from kandor import WorldBuilder
+from kandor.agents.god_agent import GodAgent
 from kandor.llm.mock import MockLLM
 
 
@@ -86,3 +87,10 @@ def test_world_builder_can_seed_memory_from_blueprint() -> None:
 
     assert len(memory.relations) == 1
     assert len(memory.events) == 1
+
+
+def test_god_agent_loads_prompt_from_package_resources() -> None:
+    prompt = GodAgent.load_prompt("god_agent")
+
+    assert prompt["name"] == "god_agent"
+    assert "user_prompt" in prompt["inputs"]

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from importlib import resources
 import json
 from pathlib import Path
 from typing import Any
@@ -17,7 +18,7 @@ def load_temporal_kg_snapshot(path: str | Path) -> dict[str, Any]:
 
 
 def _esm_source() -> str:
-    return (Path(__file__).with_name("temporal_kg.js")).read_text(encoding="utf-8")
+    return resources.files("kandor.widgets").joinpath("temporal_kg.js").read_text(encoding="utf-8")
 
 
 if anywidget is not None and traitlets is not None:

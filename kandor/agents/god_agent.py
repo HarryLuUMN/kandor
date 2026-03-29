@@ -1,15 +1,12 @@
 from __future__ import annotations
 
-from pathlib import Path
+from importlib import resources
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field
 
 from kandor.core.models import Entity, Event, Relation, WorldBlueprint, WorldSpec
 from kandor.llm.base import BaseLLM
-
-
-PROMPTS_DIR = Path(__file__).resolve().parents[2] / "prompts"
 
 
 class GodAgentOutput(BaseModel):
@@ -56,6 +53,5 @@ class GodAgent:
 
     @staticmethod
     def load_prompt(prompt_name: str) -> dict:
-        prompt_path = PROMPTS_DIR / f"{prompt_name}.yaml"
-        with prompt_path.open("r", encoding="utf-8") as handle:
-            return yaml.safe_load(handle)
+        prompt_resource = resources.files("kandor.prompts").joinpath(f"{prompt_name}.yaml")
+        return yaml.safe_load(prompt_resource.read_text(encoding="utf-8"))

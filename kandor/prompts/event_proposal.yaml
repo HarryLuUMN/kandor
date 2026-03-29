@@ -1,0 +1,11 @@
+name: event_proposal
+purpose: Propose candidate world events for the next simulation step.
+inputs:
+  - world_rules
+  - current_state
+  - recent_history
+outputs:
+  - events
+guardrails:
+  - Respect hard constraints in world rules.
+  - Prefer events with clear state changes.

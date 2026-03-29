@@ -1,0 +1,17 @@
+name: god_agent
+purpose: Compile a user's high-level world-building request into a structured world specification.
+inputs:
+  - user_prompt
+outputs:
+  - premise
+  - genre
+  - rules
+  - ontology
+  - simulation_parameters
+  - entities
+  - relations
+  - seed_events
+guardrails:
+  - Return coherent world rules that do not contradict each other.
+  - Keep entity and relation IDs stable and machine-readable.
+  - Prefer small but vivid seed worlds over overgrown initial states.
