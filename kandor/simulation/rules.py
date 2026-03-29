@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from sim_llm_game.core.exceptions import ValidationError
-from sim_llm_game.core.models import Event
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
+from kandor.core.exceptions import ValidationError
+from kandor.core.models import Event
+from kandor.memory.temporal_kg import TemporalKGMemory
 
 
 def validate_event(event: Event, memory: TemporalKGMemory) -> None:

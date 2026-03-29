@@ -1,8 +1,8 @@
-from sim_llm_game.generation.lore import LoreGenerator
-from sim_llm_game.llm.mock import MockLLM
-from sim_llm_game.core.models import Event, Relation
-from sim_llm_game.memory.summaries import summarize_world_state
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
+from kandor.generation.lore import LoreGenerator
+from kandor.llm.mock import MockLLM
+from kandor.core.models import Event, Relation
+from kandor.memory.summaries import summarize_world_state
+from kandor.memory.temporal_kg import TemporalKGMemory
 
 
 def test_lore_generator_summarizes_world() -> None:

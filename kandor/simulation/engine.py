@@ -3,11 +3,11 @@ from __future__ import annotations
 from collections.abc import Callable, Sequence
 from typing import Optional
 
-from sim_llm_game.core.models import Event, WorldSpec, WorldState
-from sim_llm_game.memory.retrieval import RelevantContext
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
-from sim_llm_game.simulation.rules import validate_event
-from sim_llm_game.simulation.updater import WorldUpdater
+from kandor.core.models import Event, WorldSpec, WorldState
+from kandor.memory.retrieval import RelevantContext
+from kandor.memory.temporal_kg import TemporalKGMemory
+from kandor.simulation.rules import validate_event
+from kandor.simulation.updater import WorldUpdater
 
 
 EventSelector = Callable[[RelevantContext, Sequence[Event]], Optional[Event]]

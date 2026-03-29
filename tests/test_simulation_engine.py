@@ -1,9 +1,9 @@
 import pytest
 
-from sim_llm_game.core.exceptions import ValidationError
-from sim_llm_game.core.models import Event, Relation, WorldSpec, WorldState
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
-from sim_llm_game.simulation.engine import SimulationRunner
+from kandor.core.exceptions import ValidationError
+from kandor.core.models import Event, Relation, WorldSpec, WorldState
+from kandor.memory.temporal_kg import TemporalKGMemory
+from kandor.simulation.engine import SimulationRunner
 
 
 def test_simulation_runner_applies_event_and_updates_memory() -> None:

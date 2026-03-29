@@ -1,4 +1,4 @@
-from sim_llm_game.core.models import (
+from kandor.core.models import (
     Entity,
     Event,
     Relation,

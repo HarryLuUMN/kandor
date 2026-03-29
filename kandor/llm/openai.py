@@ -8,8 +8,8 @@ from urllib import request
 
 from pydantic import BaseModel
 
-from sim_llm_game.llm.base import BaseLLM
-from sim_llm_game.llm.env import load_dotenv_if_present
+from kandor.llm.base import BaseLLM
+from kandor.llm.env import load_dotenv_if_present
 
 
 @dataclass

@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict
 
-from sim_llm_game.llm.base import BaseLLM
-from sim_llm_game.memory.summaries import summarize_events, summarize_relations
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
+from kandor.llm.base import BaseLLM
+from kandor.memory.summaries import summarize_events, summarize_relations
+from kandor.memory.temporal_kg import TemporalKGMemory
 
 
 class LoreSummary(BaseModel):

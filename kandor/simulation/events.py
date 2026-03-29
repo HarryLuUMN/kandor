@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from sim_llm_game.core.models import Event
+from kandor.core.models import Event
 
 
 class EventFactory:

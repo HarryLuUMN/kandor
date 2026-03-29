@@ -1,6 +1,6 @@
-from sim_llm_game import LoreGenerator, SimulationRunner, WorldBuilder
-from sim_llm_game.core.models import Event
-from sim_llm_game.llm.mock import MockLLM
+from kandor import LoreGenerator, SimulationRunner, WorldBuilder
+from kandor.core.models import Event
+from kandor.llm.mock import MockLLM
 
 
 def main() -> None:

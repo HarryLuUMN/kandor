@@ -32,7 +32,7 @@ Users of the library should be able to:
 Example target usage:
 
 ```python
-from sim_llm_game import WorldBuilder, SimulationRunner
+from kandor import WorldBuilder, SimulationRunner
 
 builder = WorldBuilder(llm=my_llm)
 world = builder.create_world(
@@ -83,7 +83,7 @@ The library code should own validation, state transitions, memory writes, and re
 ## Proposed Package Structure
 
 ```text
-sim_llm_game/
+kandor/
   __init__.py
   agents/
     __init__.py

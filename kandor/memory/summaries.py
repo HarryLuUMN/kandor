@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from sim_llm_game.core.models import Event, Relation
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
+from kandor.core.models import Event, Relation
+from kandor.memory.temporal_kg import TemporalKGMemory
 
 
 def summarize_relations(relations: list[Relation]) -> str:

@@ -1,6 +1,6 @@
-from sim_llm_game.core.exceptions import MemoryConflictError
-from sim_llm_game.core.models import Event, Relation
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
+from kandor.core.exceptions import MemoryConflictError
+from kandor.core.models import Event, Relation
+from kandor.memory.temporal_kg import TemporalKGMemory
 
 
 def test_add_relation_and_query_world_state() -> None:

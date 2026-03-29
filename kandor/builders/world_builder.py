@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from sim_llm_game.agents.god_agent import GodAgent
-from sim_llm_game.core.models import WorldBlueprint
-from sim_llm_game.llm.base import BaseLLM
-from sim_llm_game.memory.temporal_kg import TemporalKGMemory
+from kandor.agents.god_agent import GodAgent
+from kandor.core.models import WorldBlueprint
+from kandor.llm.base import BaseLLM
+from kandor.memory.temporal_kg import TemporalKGMemory
 
 
 class WorldBuilder:

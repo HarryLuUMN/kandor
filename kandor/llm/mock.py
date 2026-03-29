@@ -6,7 +6,7 @@ from typing import Any, Optional, Union
 
 from pydantic import BaseModel
 
-from sim_llm_game.llm.base import BaseLLM
+from kandor.llm.base import BaseLLM
 
 
 MockHandler = Callable[[dict[str, Any]], Union[dict[str, Any], BaseModel]]

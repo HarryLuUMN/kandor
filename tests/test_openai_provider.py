@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from sim_llm_game.llm.openai import OpenAICompatibleLLM
+from kandor.llm.openai import OpenAICompatibleLLM
 
 
 class DummySchema(BaseModel):

@@ -42,8 +42,8 @@
         <p>Environment variables: <code>OPENAI_API_KEY</code>, optional <code>OPENAI_MODEL</code>, optional <code>OPENAI_BASE_URL</code>.</p>
 
         <h2>Minimal usage</h2>
-        <pre><code>from sim_llm_game import LoreGenerator, SimulationRunner, WorldBuilder
-from sim_llm_game.llm.mock import MockLLM
+        <pre><code>from kandor import LoreGenerator, SimulationRunner, WorldBuilder
+from kandor.llm.mock import MockLLM
 
 llm = MockLLM(responses={
     "god_agent": {
@@ -61,7 +61,7 @@ runner = SimulationRunner(world=blueprint.spec, memory=memory)
 lore = LoreGenerator(llm=llm)</code></pre>
 
         <h2>Notebook widget</h2>
-        <pre><code>from sim_llm_game import TemporalKGWidget
+        <pre><code>from kandor import TemporalKGWidget
 widget = TemporalKGWidget("reports/smoke/openai-smoke-kg-2026-03-24.json")
 widget</code></pre>
 

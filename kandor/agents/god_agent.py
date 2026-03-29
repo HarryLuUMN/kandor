@@ -5,8 +5,8 @@ from pathlib import Path
 import yaml
 from pydantic import BaseModel, ConfigDict, Field
 
-from sim_llm_game.core.models import Entity, Event, Relation, WorldBlueprint, WorldSpec
-from sim_llm_game.llm.base import BaseLLM
+from kandor.core.models import Entity, Event, Relation, WorldBlueprint, WorldSpec
+from kandor.llm.base import BaseLLM
 
 
 PROMPTS_DIR = Path(__file__).resolve().parents[2] / "prompts"

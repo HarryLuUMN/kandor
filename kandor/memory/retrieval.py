@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from sim_llm_game.core.models import Event, Relation
+from kandor.core.models import Event, Relation
 
 
 @dataclass

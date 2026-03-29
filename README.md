@@ -72,8 +72,8 @@ Expected environment variables:
 Example provider usage:
 
 ```python
-from sim_llm_game.builders.world_builder import WorldBuilder
-from sim_llm_game.llm.openai import OpenAICompatibleLLM
+from kandor.builders.world_builder import WorldBuilder
+from kandor.llm.openai import OpenAICompatibleLLM
 
 llm = OpenAICompatibleLLM()
 builder = WorldBuilder(llm=llm)
@@ -95,7 +95,7 @@ python3 -m pip install -e '.[widgets]'
 Then in a notebook:
 
 ```python
-from sim_llm_game import TemporalKGWidget
+from kandor import TemporalKGWidget
 widget = TemporalKGWidget('reports/smoke/openai-smoke-kg-2026-03-24.json')
 widget
 ```
@@ -103,7 +103,7 @@ widget
 You can also load the snapshot data directly:
 
 ```python
-from sim_llm_game import load_temporal_kg_snapshot
+from kandor import load_temporal_kg_snapshot
 
 data = load_temporal_kg_snapshot("reports/smoke/openai-smoke-kg-2026-03-24.json")
 ```
@@ -111,8 +111,8 @@ data = load_temporal_kg_snapshot("reports/smoke/openai-smoke-kg-2026-03-24.json"
 ## Minimal Usage
 
 ```python
-from sim_llm_game import LoreGenerator, SimulationRunner, WorldBuilder
-from sim_llm_game.llm.mock import MockLLM
+from kandor import LoreGenerator, SimulationRunner, WorldBuilder
+from kandor.llm.mock import MockLLM
 
 llm = MockLLM(
     responses={

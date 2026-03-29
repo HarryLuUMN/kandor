@@ -1,6 +1,6 @@
 from pydantic import ValidationError
 
-from sim_llm_game.core.models import Relation, WorldSpec
+from kandor.core.models import Relation, WorldSpec
 
 
 def test_world_spec_defaults_are_valid() -> None:

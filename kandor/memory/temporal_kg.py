@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from sim_llm_game.core.exceptions import MemoryConflictError
-from sim_llm_game.core.models import Event, Relation
-from sim_llm_game.memory.retrieval import EntityHistory, RelevantContext
+from kandor.core.exceptions import MemoryConflictError
+from kandor.core.models import Event, Relation
+from kandor.memory.retrieval import EntityHistory, RelevantContext
 
 
 class TemporalKGMemory:

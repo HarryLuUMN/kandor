@@ -1,5 +1,5 @@
-from sim_llm_game import WorldBuilder
-from sim_llm_game.llm.mock import MockLLM
+from kandor import WorldBuilder
+from kandor.llm.mock import MockLLM
 
 
 def test_world_builder_creates_structured_blueprint() -> None:

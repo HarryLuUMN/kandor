@@ -4,7 +4,7 @@ from typing import Any
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from sim_llm_game.core.types import EntityType
+from kandor.core.types import EntityType
 
 
 class WorldSpec(BaseModel):

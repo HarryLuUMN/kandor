@@ -24,7 +24,7 @@ widgets = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["sim_llm_game*"]
+include = ["kandor*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
