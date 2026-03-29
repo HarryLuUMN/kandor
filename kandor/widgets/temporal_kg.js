@@ -54,13 +54,13 @@ function render({ model, el }) {
   el.innerHTML = `
     <style>
       .kg-shell { font-family: Inter, system-ui, sans-serif; color: #e5e7eb; }
-      .kg-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
-      .kg-panel { background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 12px; }
-      .kg-meta { color: #94a3b8; font-size: 13px; }
-      svg { width: 100%; height: 520px; display: block; }
-      .kg-tooltip { color: #cbd5e1; font-size: 13px; margin-top: 8px; min-height: 20px; }
-      .kg-badge { padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,0.06); }
-      input[type='range'] { width: 220px; }
+      .kg-shell .kg-controls { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+      .kg-shell.kg-panel { background: #0f172a; border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 12px; }
+      .kg-shell .kg-meta { color: #94a3b8; font-size: 13px; }
+      .kg-shell svg { width: 100%; height: 520px; display: block; }
+      .kg-shell .kg-tooltip { color: #cbd5e1; font-size: 13px; margin-top: 8px; min-height: 20px; }
+      .kg-shell .kg-badge { padding: 4px 8px; border-radius: 999px; background: rgba(255,255,255,0.06); }
+      .kg-shell input[type='range'] { width: 220px; }
     </style>
     <div class="kg-shell kg-panel">
       <div class="kg-controls">
