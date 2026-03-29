@@ -24,7 +24,11 @@ widgets = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["kandor*"]
+include = ["kandor*", "prompts*"]
+
+[tool.setuptools.package-data]
+"kandor.widgets" = ["*.js"]
+"prompts" = ["*.yaml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
