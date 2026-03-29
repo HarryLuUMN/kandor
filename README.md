@@ -58,11 +58,13 @@ These notebooks live in the source repository under `examples/notebooks/`.
 - `examples/notebooks/01_quickstart_world_pipeline.ipynb` walks through world creation, simulation, and lore generation
 - `examples/notebooks/02_temporal_kg_queries.ipynb` focuses on temporal memory queries and retrieval
 - `examples/notebooks/03_temporal_kg_widget.ipynb` shows the notebook widget for saved KG snapshots
+- `examples/notebooks/04_openai_world_pipeline.ipynb` runs the same pipeline against a real OpenAI-compatible backend
 
 Current status:
 - these notebooks are starter examples for local exploration
 - they are designed to run with the current mock pipeline and bundled snapshot data
 - the widget notebook requires the optional `widgets` extras
+- the OpenAI backend notebook expects `OPENAI_API_KEY` plus optional `OPENAI_MODEL` and `OPENAI_BASE_URL`, which can come from the environment or the repository `.env`
 - they are not included in the published wheel, so use a source checkout if you want the bundled notebooks and demo scripts
 
 ## Docs
