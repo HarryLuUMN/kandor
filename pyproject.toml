@@ -7,12 +7,30 @@ name = "kandor"
 version = "0.1.0"
 description = "A bottle-city engine for simulated fictional worlds with temporal knowledge graph memory."
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.9"
+authors = [
+  { name = "Harry Lu" },
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
   "pydantic>=2.7,<3.0",
   "PyYAML>=6.0,<7.0",
   "eval_type_backport>=0.2,<0.3; python_version < '3.10'",
 ]
+
+[project.urls]
+Homepage = "https://github.com/HarryLuUMN/kandor"
+Repository = "https://github.com/HarryLuUMN/kandor"
+Documentation = "https://harryluumn.github.io/kandor"
 
 [project.optional-dependencies]
 dev = [
